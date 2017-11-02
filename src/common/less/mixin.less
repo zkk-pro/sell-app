@@ -1,0 +1,27 @@
+// 解决手机可能出现2像素的问题
+.border-1px(@c) {
+  position: relative;
+  &:after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid @c;
+    content: '';
+  }
+}
+
+.border-none() {
+  &:after {
+    display: none;
+  }
+}
+
+// 解决手机dpr为3的情况
+.bg-image(@url) {
+  background-image: url("@{url}@2x.png");
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3) {
+    background-image: url("@{url}@3x.png");
+  }
+}
