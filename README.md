@@ -1,21 +1,16 @@
-# sell
+## sell APP
 
-> sell app
+> 仿外卖APP 商家页面
 
-## Build Setup
+具有：
 
-``` bash
-# install dependencies
-npm install
+- 商品主页（已完成）
+- 商家公告（已完成）
+- 商家页
+- 购物车（已完成）
+- 商品详情页（开发中。。）
+- 评价详情页
 
-# serve with hot reload at localhost:8080
-npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+项目总结：
+后续会编写项目总结。。。
