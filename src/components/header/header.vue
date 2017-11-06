@@ -47,7 +47,7 @@
     <transition name="fade">
       <div class="detail" v-show="detailShow">
         <!-- 使用 sticky footers布局 -->
-        <div class="detail-warpper clearfix">
+        <div class="detail-warpper">
           <div class="detail-main">
             <h1 class="name">{{seller.name}}{{seller.score}}</h1>
             <div class="star-wrapper">
@@ -267,7 +267,7 @@ export default {
       // backdrop-filter:blur(10px);
 
       .detail-warpper{
-        min-height: 100%;
+        max-height: 100%;
         width: 100%;
         .detail-main{
           margin-top: 64px;
@@ -353,7 +353,6 @@ export default {
       .detail-close{
         position: relative;
         width: 32px;
-        // height: 32px;
         margin: -64px auto;
         font-size: 32px;
 
