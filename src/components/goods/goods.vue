@@ -14,7 +14,7 @@
       <!-- 右侧商品区 -->
       <div class="foods-wrapper" ref="foods">
         <ul>
-          <li v-for="item in goods" class="food-list food-list-hook" >
+          <li v-for="item in goods" class="food-list food-list-hook">
             <h1 class="title">{{item.name}}</h1>
             <ul>
               <!-- 注意这里是遍历item.foods -->
@@ -49,9 +49,7 @@
                 :minPrice="seller.minPrice"/>
 
     </div>
-    <div>
-      <Food :food="selectedFood" ref="foodTag"></Food>
-    </div>
+    <Food :food="selectedFood" ref="foodTag"></Food>
   </div>
 </template>
 
@@ -112,7 +110,7 @@
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     },
     methods: {
-//      初始化
+      // 初始化
       initScroll() {
         this.menuScroll = new BScroll(this.$refs.menu, {
           click: true
@@ -127,17 +125,18 @@
         });
       },
 
-//      获取元素节点的高
+//      获取每个分类元素节点的高
       calculateHeight() {
 //        获取全部类型的节点（是一个数组）
         let foodList = this.$refs.foods.getElementsByClassName('food-list-hook');
-        let height = 0;
+        let height = 0; // 第一个类型的高度
         this.listHeight.push(height);
 //        遍历数组里的节点（每一种类型）
         for (let i = 0; i < foodList.length; i++) {
           let item = foodList[i];
 //          把每一个类型的高度累加给height
-          height += item.clientHeight;
+//          减18是为了修复样式中把最后一个商品的padding-bottom设为0了
+          height += item.clientHeight - 18;
 
           this.listHeight.push(height);
         }
@@ -239,6 +238,7 @@
     // 右侧商品
     .foods-wrapper {
       flex: auto; // 右侧自适应
+      font-size: 0;
       .food-list {
         .title {
           padding-left: 14px;
